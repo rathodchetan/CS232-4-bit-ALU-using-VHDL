@@ -1,0 +1,257 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/simulation/modelsim
+Eadder_substracter
+Z1 w1644328749
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z4 8/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd
+Z5 F/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd
+l0
+L4 1
+VG2QK^OcCQi7lejRlgm82_2
+!s100 KZ<Hd7b=h>hUnW>aL_1KQ0
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1644328828
+!i10b 1
+Z8 !s108 1644328828.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd|
+Z10 !s107 /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aadd_sub_arc
+R2
+R3
+DEx4 work 17 adder_substracter 0 22 G2QK^OcCQi7lejRlgm82_2
+!i122 0
+l44
+L12 105
+VmJWR287n`0RK<RhjlD3Ic1
+!s100 gJUYT9F=[zAeb6MMeW5F_3
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eand_gate
+Z13 w1642385072
+R2
+R3
+!i122 4
+R0
+Z14 8/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/and_gate.vhd
+Z15 F/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/and_gate.vhd
+l0
+L6 1
+V>9zPMAc@BH`[<`f01J2i:2
+!s100 ]JRfjg?0[kbi[O_3BeQ9:1
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/and_gate.vhd|
+Z17 !s107 /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/and_gate.vhd|
+!i113 1
+R11
+R12
+Aandlogic
+R2
+R3
+DEx4 work 8 and_gate 0 22 >9zPMAc@BH`[<`f01J2i:2
+!i122 4
+l18
+Z18 L16 7
+VZLKH_CnNUSb]ZJJoYaK2<1
+!s100 2LPY0mV?OEQ^`KheDRYVD1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Efourtoonexor
+Z19 w1643406296
+R2
+R3
+!i122 1
+R0
+Z20 8/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd
+Z21 F/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd
+l0
+L4 1
+VEk>M;je1]l9f5_BCX?aQ^2
+!s100 OUmc8I<7Kl463nR6Z5?G01
+R6
+31
+R7
+!i10b 1
+R8
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd|
+Z23 !s107 /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd|
+!i113 1
+R11
+R12
+Afourtoonexor_arc
+R2
+R3
+DEx4 work 12 fourtoonexor 0 22 Ek>M;je1]l9f5_BCX?aQ^2
+!i122 1
+l19
+L12 23
+Vae?W6OVTUW[J]T?<m5[oc2
+!s100 UhznPdVEKif=5X:09g_TA0
+R6
+31
+R7
+!i10b 1
+R8
+R22
+R23
+!i113 1
+R11
+R12
+Enot_gate
+Z24 w1642383928
+R2
+R3
+!i122 3
+R0
+Z25 8/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/not_gate.vhd
+Z26 F/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/not_gate.vhd
+l0
+L6 1
+VFi^JEzS^Ch3nYTecIXc3K2
+!s100 3CE3>g[Z<U1m4iK>d=]ZK2
+R6
+31
+R7
+!i10b 1
+R8
+Z27 !s90 -reportprogress|300|-93|-work|work|/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/not_gate.vhd|
+Z28 !s107 /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/not_gate.vhd|
+!i113 1
+R11
+R12
+Anotlogic
+R2
+R3
+DEx4 work 8 not_gate 0 22 Fi^JEzS^Ch3nYTecIXc3K2
+!i122 3
+l17
+L15 7
+VzFm68BoHF`=BiEY53Y39[3
+!s100 F9a`lXDJHIj75VfHcUS9W0
+R6
+31
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12
+Eor_gate
+Z29 w1642383912
+R2
+R3
+!i122 5
+R0
+Z30 8/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd
+Z31 F/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd
+l0
+L6 1
+Vabk@kIBEnZBhO4AlE=fZQ1
+!s100 e8aA1GjlE1?XhVUJ9m66P1
+R6
+31
+R7
+!i10b 1
+R8
+Z32 !s90 -reportprogress|300|-93|-work|work|/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd|
+!s107 /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd|
+!i113 1
+R11
+R12
+Aorlogic
+R2
+R3
+DEx4 work 7 or_gate 0 22 abk@kIBEnZBhO4AlE=fZQ1
+!i122 5
+l18
+R18
+VI:5<Lik8VLNB0MT7LV[kI1
+!s100 =k6NDND8ldaWOk[L3N<;]0
+R6
+31
+R7
+!i10b 1
+R8
+R32
+Z33 !s107 /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd|
+!i113 1
+R11
+R12
+Exor_gate
+Z34 w1642391848
+R2
+R3
+!i122 2
+R0
+Z35 8/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd
+Z36 F/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd
+l0
+L4 1
+VM=cgdfImRgzEA77id;bJi0
+!s100 L<VHVV<F4Y0oKgFPhKl^b3
+R6
+31
+R7
+!i10b 1
+R8
+Z37 !s90 -reportprogress|300|-93|-work|work|/home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd|
+Z38 !s107 /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd|
+!i113 1
+R11
+R12
+Axor_arc
+R2
+R3
+DEx4 work 8 xor_gate 0 22 M=cgdfImRgzEA77id;bJi0
+!i122 2
+l28
+L9 38
+VP:C;zc3l>=1U15LACTJm`1
+!s100 BlCg0VdJ;`2Ydf_XC02en1
+R6
+31
+R7
+!i10b 1
+R8
+R37
+R38
+!i113 1
+R11
+R12

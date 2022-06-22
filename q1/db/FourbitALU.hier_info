@@ -1,0 +1,4368 @@
+|FourbitALU
+a[0] => Adder_Substracter:ASINST.a[0]
+a[0] => FourBitMultiplier:MINST.a[0]
+a[0] => FourBitComparator:CINST.A[0]
+a[0] => FourBitNand:NAINST.a[0]
+a[0] => FourBitNor:NOINST.a[0]
+a[0] => FourBitXor:XOINST.a[0]
+a[0] => FourBitXnor:AXNINST.a[0]
+a[1] => Adder_Substracter:ASINST.a[1]
+a[1] => FourBitMultiplier:MINST.a[1]
+a[1] => FourBitComparator:CINST.A[1]
+a[1] => FourBitNand:NAINST.a[1]
+a[1] => FourBitNor:NOINST.a[1]
+a[1] => FourBitXor:XOINST.a[1]
+a[1] => FourBitXnor:AXNINST.a[1]
+a[2] => Adder_Substracter:ASINST.a[2]
+a[2] => FourBitMultiplier:MINST.a[2]
+a[2] => FourBitComparator:CINST.A[2]
+a[2] => FourBitNand:NAINST.a[2]
+a[2] => FourBitNor:NOINST.a[2]
+a[2] => FourBitXor:XOINST.a[2]
+a[2] => FourBitXnor:AXNINST.a[2]
+a[3] => Adder_Substracter:ASINST.a[3]
+a[3] => FourBitMultiplier:MINST.a[3]
+a[3] => FourBitComparator:CINST.A[3]
+a[3] => FourBitNand:NAINST.a[3]
+a[3] => FourBitNor:NOINST.a[3]
+a[3] => FourBitXor:XOINST.a[3]
+a[3] => FourBitXnor:AXNINST.a[3]
+b[0] => Adder_Substracter:ASINST.b[0]
+b[0] => FourBitMultiplier:MINST.b[0]
+b[0] => FourBitComparator:CINST.B[0]
+b[0] => FourBitNand:NAINST.b[0]
+b[0] => FourBitNor:NOINST.b[0]
+b[0] => FourBitXor:XOINST.b[0]
+b[0] => FourBitXnor:AXNINST.b[0]
+b[1] => Adder_Substracter:ASINST.b[1]
+b[1] => FourBitMultiplier:MINST.b[1]
+b[1] => FourBitComparator:CINST.B[1]
+b[1] => FourBitNand:NAINST.b[1]
+b[1] => FourBitNor:NOINST.b[1]
+b[1] => FourBitXor:XOINST.b[1]
+b[1] => FourBitXnor:AXNINST.b[1]
+b[2] => Adder_Substracter:ASINST.b[2]
+b[2] => FourBitMultiplier:MINST.b[2]
+b[2] => FourBitComparator:CINST.B[2]
+b[2] => FourBitNand:NAINST.b[2]
+b[2] => FourBitNor:NOINST.b[2]
+b[2] => FourBitXor:XOINST.b[2]
+b[2] => FourBitXnor:AXNINST.b[2]
+b[3] => Adder_Substracter:ASINST.b[3]
+b[3] => FourBitMultiplier:MINST.b[3]
+b[3] => FourBitComparator:CINST.B[3]
+b[3] => FourBitNand:NAINST.b[3]
+b[3] => FourBitNor:NOINST.b[3]
+b[3] => FourBitXor:XOINST.b[3]
+b[3] => FourBitXnor:AXNINST.b[3]
+sel[0] => not_gate:NOTINST1.A
+sel[0] => ThreeInputAnd:THREEANDINST2.a
+sel[0] => ThreeInputAnd:THREEANDINST4.a
+sel[0] => ThreeInputAnd:THREEANDINST6.a
+sel[0] => Adder_Substracter:ASINST.s
+sel[1] => not_gate:NOTINST2.A
+sel[1] => ThreeInputAnd:THREEANDINST1.b
+sel[1] => ThreeInputAnd:THREEANDINST2.b
+sel[1] => ThreeInputAnd:THREEANDINST5.b
+sel[1] => ThreeInputAnd:THREEANDINST6.b
+sel[2] => not_gate:NOTINST3.A
+sel[2] => ThreeInputAnd:THREEANDINST3.c
+sel[2] => ThreeInputAnd:THREEANDINST4.c
+sel[2] => ThreeInputAnd:THREEANDINST5.c
+sel[2] => ThreeInputAnd:THREEANDINST6.c
+result[0] << EightBitOr:ORINST6.s[0]
+result[1] << EightBitOr:ORINST6.s[1]
+result[2] << EightBitOr:ORINST6.s[2]
+result[3] << EightBitOr:ORINST6.s[3]
+result[4] << EightBitOr:ORINST6.s[4]
+result[5] << EightBitOr:ORINST6.s[5]
+result[6] << EightBitOr:ORINST6.s[6]
+result[7] << EightBitOr:ORINST6.s[7]
+
+
+|FourbitALU|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST1
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST2
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST3
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST3|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST3|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST4
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST4|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST4|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST5
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST5|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST5|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST6
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST6|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|ThreeInputAnd:THREEANDINST6|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST
+a[0] => xor_gate:XORINST11.X
+a[0] => and_gate:ANDINST1.A
+a[1] => xor_gate:XORINST21.X
+a[1] => and_gate:ANDINST21.A
+a[2] => xor_gate:XORINST31.X
+a[2] => and_gate:ANDINST31.A
+a[3] => xor_gate:XORINST41.X
+a[3] => and_gate:ANDINST41.A
+b[0] => FourToOnexor:XORINST.A[0]
+b[1] => FourToOnexor:XORINST.A[1]
+b[2] => FourToOnexor:XORINST.A[2]
+b[3] => FourToOnexor:XORINST.A[3]
+s => c.IN1
+s => c.IN1
+s => c.IN1
+s => output.IN1
+s => FourToOnexor:XORINST.cin
+s => xor_gate:XORINST12.Y
+output[0] <= xor_gate:XORINST12.Z
+output[1] <= xor_gate:XORINST22.Z
+output[2] <= xor_gate:XORINST32.Z
+output[3] <= xor_gate:XORINST42.Z
+output[4] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= <GND>
+output[6] <= <GND>
+output[7] <= <GND>
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST
+A[0] => xor_gate:XORINST1.X
+A[1] => xor_gate:XORINST2.X
+A[2] => xor_gate:XORINST3.X
+A[3] => xor_gate:XORINST4.X
+cin => xor_gate:XORINST1.Y
+cin => xor_gate:XORINST2.Y
+cin => xor_gate:XORINST3.Y
+cin => xor_gate:XORINST4.Y
+C[0] <= xor_gate:XORINST1.Z
+C[1] <= xor_gate:XORINST2.Z
+C[2] <= xor_gate:XORINST3.Z
+C[3] <= xor_gate:XORINST4.Z
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST2
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST2|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST2|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST2|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST3
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST3|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST3|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST3|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST3|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST3|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST4
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST4|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST4|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST4|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST4|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST4|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST21
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST21|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST21|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST21|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST21|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST21|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST31
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST31|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST31|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST31|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST31|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST31|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST41
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST41|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST41|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST41|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST41|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST41|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|and_gate:ANDINST21
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|and_gate:ANDINST31
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|and_gate:ANDINST41
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST12
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST12|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST12|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST12|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST12|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST12|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST
+a[0] => and_gate:ANDINST1.A
+a[0] => and_gate:ANDINST5.A
+a[0] => and_gate:ANDINST9.A
+a[0] => and_gate:ANDINST13.A
+a[1] => and_gate:ANDINST2.A
+a[1] => and_gate:ANDINST6.A
+a[1] => and_gate:ANDINST10.A
+a[1] => and_gate:ANDINST14.A
+a[2] => and_gate:ANDINST3.A
+a[2] => and_gate:ANDINST7.A
+a[2] => and_gate:ANDINST11.A
+a[2] => and_gate:ANDINST15.A
+a[3] => and_gate:ANDINST4.A
+a[3] => and_gate:ANDINST8.A
+a[3] => and_gate:ANDINST12.A
+a[3] => and_gate:ANDINST16.A
+b[0] => and_gate:ANDINST1.B
+b[0] => and_gate:ANDINST2.B
+b[0] => and_gate:ANDINST3.B
+b[0] => and_gate:ANDINST4.B
+b[1] => and_gate:ANDINST5.B
+b[1] => and_gate:ANDINST6.B
+b[1] => and_gate:ANDINST7.B
+b[1] => and_gate:ANDINST8.B
+b[2] => and_gate:ANDINST9.B
+b[2] => and_gate:ANDINST10.B
+b[2] => and_gate:ANDINST11.B
+b[2] => and_gate:ANDINST12.B
+b[3] => and_gate:ANDINST13.B
+b[3] => and_gate:ANDINST14.B
+b[3] => and_gate:ANDINST15.B
+b[3] => and_gate:ANDINST16.B
+output[0] <= and_gate:ANDINST1.C
+output[1] <= half_adder:HA1.S
+output[2] <= half_adder:HA3.S
+output[3] <= half_adder:HA4.S
+output[4] <= OnebitFullAdd:FA6.sum
+output[5] <= OnebitFullAdd:FA7.sum
+output[6] <= OnebitFullAdd:FA8.sum
+output[7] <= OnebitFullAdd:FA8.cout
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST9
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST10
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST11
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST12
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST13
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST14
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST15
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST16
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|half_adder:HA4|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8
+a => half_adder:HADDINST1.T1
+b => half_adder:HADDINST1.T2
+cin => half_adder:HADDINST2.T2
+sum <= half_adder:HADDINST2.S
+cout <= half_adder:HADDINST3.S
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3
+T1 => xor_gate:XORINST.X
+T1 => and_gate:ANDINST.A
+T2 => xor_gate:XORINST.Y
+T2 => and_gate:ANDINST.B
+Carry <= and_gate:ANDINST.C
+S <= xor_gate:XORINST.Z
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3|xor_gate:XORINST
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3|xor_gate:XORINST|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3|xor_gate:XORINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3|xor_gate:XORINST|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST3|and_gate:ANDINST
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST
+A[0] => xnor_gate:XNORINST1.X
+A[0] => FourInputNot:FOURNOTINST1.a[0]
+A[0] => FiveInputAnd:FIVEANDINST1.d
+A[1] => xnor_gate:XNORINST2.X
+A[1] => FourInputNot:FOURNOTINST1.a[1]
+A[1] => FourInputAnd:FOURANDINST1.c
+A[2] => xnor_gate:XNORINST3.X
+A[2] => FourInputNot:FOURNOTINST1.a[2]
+A[2] => ThreeInputAnd:THREEANDINST1.b
+A[3] => xnor_gate:XNORINST4.X
+A[3] => FourInputNot:FOURNOTINST1.a[3]
+A[3] => and_gate:ANDINST1.A
+B[0] => xnor_gate:XNORINST1.Y
+B[0] => FourInputNot:FOURNOTINST2.a[0]
+B[0] => FiveInputAnd:FIVEANDINST2.e
+B[1] => xnor_gate:XNORINST2.Y
+B[1] => FourInputNot:FOURNOTINST2.a[1]
+B[1] => FourInputAnd:FOURANDINST2.d
+B[2] => xnor_gate:XNORINST3.Y
+B[2] => FourInputNot:FOURNOTINST2.a[2]
+B[2] => ThreeInputAnd:THREEANDINST2.c
+B[3] => xnor_gate:XNORINST4.Y
+B[3] => FourInputNot:FOURNOTINST2.a[3]
+B[3] => and_gate:ANDINST2.B
+output[0] <= and_gate:ANDINST3.C
+output[1] <= and_gate:ANDINST4.C
+output[2] <= and_gate:ANDINST5.C
+output[3] <= <GND>
+output[4] <= <GND>
+output[5] <= <GND>
+output[6] <= <GND>
+output[7] <= <GND>
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST1
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST1|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST1|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST1|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST1|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST0
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+d => and_gate:ANDINST3.B
+s <= and_gate:ANDINST3.C
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST0|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST0|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST0|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST1
+a[0] => not_gate:NOTINST1.A
+a[1] => not_gate:NOTINST2.A
+a[2] => not_gate:NOTINST3.A
+a[3] => not_gate:NOTINST4.A
+s[0] <= not_gate:NOTINST1.B
+s[1] <= not_gate:NOTINST2.B
+s[2] <= not_gate:NOTINST3.B
+s[3] <= not_gate:NOTINST4.B
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST1|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST1|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST1|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST1|not_gate:NOTINST4
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST2
+a[0] => not_gate:NOTINST1.A
+a[1] => not_gate:NOTINST2.A
+a[2] => not_gate:NOTINST3.A
+a[3] => not_gate:NOTINST4.A
+s[0] <= not_gate:NOTINST1.B
+s[1] <= not_gate:NOTINST2.B
+s[2] <= not_gate:NOTINST3.B
+s[3] <= not_gate:NOTINST4.B
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST2|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST2|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST2|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputNot:FOURNOTINST2|not_gate:NOTINST4
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|ThreeInputAnd:THREEANDINST1
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|FourBitComparator:CINST|ThreeInputAnd:THREEANDINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|ThreeInputAnd:THREEANDINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST1
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+d => and_gate:ANDINST3.B
+s <= and_gate:ANDINST3.C
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST1|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST1
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+d => and_gate:ANDINST3.B
+e => and_gate:ANDINST4.B
+s <= and_gate:ANDINST4.C
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST1|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST1|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST1
+a => or_gate:ORINST1.A
+b => or_gate:ORINST1.B
+c => or_gate:ORINST2.B
+d => or_gate:ORINST3.B
+s <= or_gate:ORINST3.C
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST1|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST1|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST1|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|ThreeInputAnd:THREEANDINST2
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+s <= and_gate:ANDINST2.C
+
+
+|FourbitALU|FourBitComparator:CINST|ThreeInputAnd:THREEANDINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|ThreeInputAnd:THREEANDINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST2
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+d => and_gate:ANDINST3.B
+s <= and_gate:ANDINST3.C
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputAnd:FOURANDINST2|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST2
+a => and_gate:ANDINST1.A
+b => and_gate:ANDINST1.B
+c => and_gate:ANDINST2.B
+d => and_gate:ANDINST3.B
+e => and_gate:ANDINST4.B
+s <= and_gate:ANDINST4.C
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST2|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FiveInputAnd:FIVEANDINST2|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST2
+a => or_gate:ORINST1.A
+b => or_gate:ORINST1.B
+c => or_gate:ORINST2.B
+d => or_gate:ORINST3.B
+s <= or_gate:ORINST3.C
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST2|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST2|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|FourInputOr:FOURORINST2|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitComparator:CINST|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST
+a[0] => nand_gate:NANDINST1.X
+a[1] => nand_gate:NANDINST2.X
+a[2] => nand_gate:NANDINST3.X
+a[3] => nand_gate:NANDINST4.X
+b[0] => nand_gate:NANDINST1.Y
+b[1] => nand_gate:NANDINST2.Y
+b[2] => nand_gate:NANDINST3.Y
+b[3] => nand_gate:NANDINST4.Y
+output[0] <= nand_gate:NANDINST1.Z
+output[1] <= nand_gate:NANDINST2.Z
+output[2] <= nand_gate:NANDINST3.Z
+output[3] <= nand_gate:NANDINST4.Z
+output[4] <= <GND>
+output[5] <= <GND>
+output[6] <= <GND>
+output[7] <= <GND>
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST1
+X => and_gate:ANDINST1.A
+Y => and_gate:ANDINST1.B
+Z <= not_gate:NOTINST1.B
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST1|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST2
+X => and_gate:ANDINST1.A
+Y => and_gate:ANDINST1.B
+Z <= not_gate:NOTINST1.B
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST2|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST3
+X => and_gate:ANDINST1.A
+Y => and_gate:ANDINST1.B
+Z <= not_gate:NOTINST1.B
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST3|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST3|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST4
+X => and_gate:ANDINST1.A
+Y => and_gate:ANDINST1.B
+Z <= not_gate:NOTINST1.B
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST4|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST4|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST
+a[0] => nor_gate:NORINST1.X
+a[1] => nor_gate:NORINST2.X
+a[2] => nor_gate:NORINST3.X
+a[3] => nor_gate:NORINST4.X
+b[0] => nor_gate:NORINST1.Y
+b[1] => nor_gate:NORINST2.Y
+b[2] => nor_gate:NORINST3.Y
+b[3] => nor_gate:NORINST4.Y
+output[0] <= nor_gate:NORINST1.Z
+output[1] <= nor_gate:NORINST2.Z
+output[2] <= nor_gate:NORINST3.Z
+output[3] <= nor_gate:NORINST4.Z
+output[4] <= <GND>
+output[5] <= <GND>
+output[6] <= <GND>
+output[7] <= <GND>
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST1
+X => or_gate:OrInst1.A
+Y => or_gate:OrInst1.B
+Z <= not_gate:NotInst1.B
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST1|or_gate:OrInst1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST1|not_gate:NotInst1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST2
+X => or_gate:OrInst1.A
+Y => or_gate:OrInst1.B
+Z <= not_gate:NotInst1.B
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST2|or_gate:OrInst1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST2|not_gate:NotInst1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST3
+X => or_gate:OrInst1.A
+Y => or_gate:OrInst1.B
+Z <= not_gate:NotInst1.B
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST3|or_gate:OrInst1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST3|not_gate:NotInst1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST4
+X => or_gate:OrInst1.A
+Y => or_gate:OrInst1.B
+Z <= not_gate:NotInst1.B
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST4|or_gate:OrInst1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitNor:NOINST|nor_gate:NORINST4|not_gate:NotInst1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST
+a[0] => xor_gate:XORINST1.X
+a[1] => xor_gate:XORINST2.X
+a[2] => xor_gate:XORINST3.X
+a[3] => xor_gate:XORINST4.X
+b[0] => xor_gate:XORINST1.Y
+b[1] => xor_gate:XORINST2.Y
+b[2] => xor_gate:XORINST3.Y
+b[3] => xor_gate:XORINST4.Y
+output[0] <= xor_gate:XORINST1.Z
+output[1] <= xor_gate:XORINST2.Z
+output[2] <= xor_gate:XORINST3.Z
+output[3] <= xor_gate:XORINST4.Z
+output[4] <= <GND>
+output[5] <= <GND>
+output[6] <= <GND>
+output[7] <= <GND>
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST1
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST1|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST1|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST1|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST2
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST2|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST2|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST2|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST3
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST3|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST3|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST3|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST3|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST3|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST4
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= or_gate:ORINST1.C
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST4|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST4|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST4|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST4|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXor:XOINST|xor_gate:XORINST4|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST
+a[0] => xnor_gate:XNORINST1.X
+a[1] => xnor_gate:XNORINST2.X
+a[2] => xnor_gate:XNORINST3.X
+a[3] => xnor_gate:XNORINST4.X
+b[0] => xnor_gate:XNORINST1.Y
+b[1] => xnor_gate:XNORINST2.Y
+b[2] => xnor_gate:XNORINST3.Y
+b[3] => xnor_gate:XNORINST4.Y
+output[0] <= xnor_gate:XNORINST1.Z
+output[1] <= xnor_gate:XNORINST2.Z
+output[2] <= xnor_gate:XNORINST3.Z
+output[3] <= xnor_gate:XNORINST4.Z
+output[4] <= <GND>
+output[5] <= <GND>
+output[6] <= <GND>
+output[7] <= <GND>
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST1
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST1|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST1|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST1|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST1|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST2
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST2|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST2|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST2|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST2|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST3
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST3|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST3|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST3|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST3|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST3|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST3|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST4
+X => not_gate:NOTINST1.A
+X => and_gate:ANDINST2.A
+Y => and_gate:ANDINST1.B
+Y => not_gate:NOTINST2.A
+Z <= not_gate:NOTINST3.B
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST4|not_gate:NOTINST1
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST4|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST4|not_gate:NOTINST2
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST4|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST4|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|FourBitXnor:AXNINST|xnor_gate:XNORINST4|not_gate:NOTINST3
+A => B.DATAIN
+B <= A.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1
+a[0] => and_gate:ANDINST1.A
+a[1] => and_gate:ANDINST2.A
+a[2] => and_gate:ANDINST3.A
+a[3] => and_gate:ANDINST4.A
+a[4] => and_gate:ANDINST5.A
+a[5] => and_gate:ANDINST6.A
+a[6] => and_gate:ANDINST7.A
+a[7] => and_gate:ANDINST8.A
+b => and_gate:ANDINST1.B
+b => and_gate:ANDINST2.B
+b => and_gate:ANDINST3.B
+b => and_gate:ANDINST4.B
+b => and_gate:ANDINST5.B
+b => and_gate:ANDINST6.B
+b => and_gate:ANDINST7.B
+b => and_gate:ANDINST8.B
+s[0] <= and_gate:ANDINST1.C
+s[1] <= and_gate:ANDINST2.C
+s[2] <= and_gate:ANDINST3.C
+s[3] <= and_gate:ANDINST4.C
+s[4] <= and_gate:ANDINST5.C
+s[5] <= and_gate:ANDINST6.C
+s[6] <= and_gate:ANDINST7.C
+s[7] <= and_gate:ANDINST8.C
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2
+a[0] => and_gate:ANDINST1.A
+a[1] => and_gate:ANDINST2.A
+a[2] => and_gate:ANDINST3.A
+a[3] => and_gate:ANDINST4.A
+a[4] => and_gate:ANDINST5.A
+a[5] => and_gate:ANDINST6.A
+a[6] => and_gate:ANDINST7.A
+a[7] => and_gate:ANDINST8.A
+b => and_gate:ANDINST1.B
+b => and_gate:ANDINST2.B
+b => and_gate:ANDINST3.B
+b => and_gate:ANDINST4.B
+b => and_gate:ANDINST5.B
+b => and_gate:ANDINST6.B
+b => and_gate:ANDINST7.B
+b => and_gate:ANDINST8.B
+s[0] <= and_gate:ANDINST1.C
+s[1] <= and_gate:ANDINST2.C
+s[2] <= and_gate:ANDINST3.C
+s[3] <= and_gate:ANDINST4.C
+s[4] <= and_gate:ANDINST5.C
+s[5] <= and_gate:ANDINST6.C
+s[6] <= and_gate:ANDINST7.C
+s[7] <= and_gate:ANDINST8.C
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3
+a[0] => and_gate:ANDINST1.A
+a[1] => and_gate:ANDINST2.A
+a[2] => and_gate:ANDINST3.A
+a[3] => and_gate:ANDINST4.A
+a[4] => and_gate:ANDINST5.A
+a[5] => and_gate:ANDINST6.A
+a[6] => and_gate:ANDINST7.A
+a[7] => and_gate:ANDINST8.A
+b => and_gate:ANDINST1.B
+b => and_gate:ANDINST2.B
+b => and_gate:ANDINST3.B
+b => and_gate:ANDINST4.B
+b => and_gate:ANDINST5.B
+b => and_gate:ANDINST6.B
+b => and_gate:ANDINST7.B
+b => and_gate:ANDINST8.B
+s[0] <= and_gate:ANDINST1.C
+s[1] <= and_gate:ANDINST2.C
+s[2] <= and_gate:ANDINST3.C
+s[3] <= and_gate:ANDINST4.C
+s[4] <= and_gate:ANDINST5.C
+s[5] <= and_gate:ANDINST6.C
+s[6] <= and_gate:ANDINST7.C
+s[7] <= and_gate:ANDINST8.C
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4
+a[0] => and_gate:ANDINST1.A
+a[1] => and_gate:ANDINST2.A
+a[2] => and_gate:ANDINST3.A
+a[3] => and_gate:ANDINST4.A
+a[4] => and_gate:ANDINST5.A
+a[5] => and_gate:ANDINST6.A
+a[6] => and_gate:ANDINST7.A
+a[7] => and_gate:ANDINST8.A
+b => and_gate:ANDINST1.B
+b => and_gate:ANDINST2.B
+b => and_gate:ANDINST3.B
+b => and_gate:ANDINST4.B
+b => and_gate:ANDINST5.B
+b => and_gate:ANDINST6.B
+b => and_gate:ANDINST7.B
+b => and_gate:ANDINST8.B
+s[0] <= and_gate:ANDINST1.C
+s[1] <= and_gate:ANDINST2.C
+s[2] <= and_gate:ANDINST3.C
+s[3] <= and_gate:ANDINST4.C
+s[4] <= and_gate:ANDINST5.C
+s[5] <= and_gate:ANDINST6.C
+s[6] <= and_gate:ANDINST7.C
+s[7] <= and_gate:ANDINST8.C
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST4|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5
+a[0] => and_gate:ANDINST1.A
+a[1] => and_gate:ANDINST2.A
+a[2] => and_gate:ANDINST3.A
+a[3] => and_gate:ANDINST4.A
+a[4] => and_gate:ANDINST5.A
+a[5] => and_gate:ANDINST6.A
+a[6] => and_gate:ANDINST7.A
+a[7] => and_gate:ANDINST8.A
+b => and_gate:ANDINST1.B
+b => and_gate:ANDINST2.B
+b => and_gate:ANDINST3.B
+b => and_gate:ANDINST4.B
+b => and_gate:ANDINST5.B
+b => and_gate:ANDINST6.B
+b => and_gate:ANDINST7.B
+b => and_gate:ANDINST8.B
+s[0] <= and_gate:ANDINST1.C
+s[1] <= and_gate:ANDINST2.C
+s[2] <= and_gate:ANDINST3.C
+s[3] <= and_gate:ANDINST4.C
+s[4] <= and_gate:ANDINST5.C
+s[5] <= and_gate:ANDINST6.C
+s[6] <= and_gate:ANDINST7.C
+s[7] <= and_gate:ANDINST8.C
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST5|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6
+a[0] => and_gate:ANDINST1.A
+a[1] => and_gate:ANDINST2.A
+a[2] => and_gate:ANDINST3.A
+a[3] => and_gate:ANDINST4.A
+a[4] => and_gate:ANDINST5.A
+a[5] => and_gate:ANDINST6.A
+a[6] => and_gate:ANDINST7.A
+a[7] => and_gate:ANDINST8.A
+b => and_gate:ANDINST1.B
+b => and_gate:ANDINST2.B
+b => and_gate:ANDINST3.B
+b => and_gate:ANDINST4.B
+b => and_gate:ANDINST5.B
+b => and_gate:ANDINST6.B
+b => and_gate:ANDINST7.B
+b => and_gate:ANDINST8.B
+s[0] <= and_gate:ANDINST1.C
+s[1] <= and_gate:ANDINST2.C
+s[2] <= and_gate:ANDINST3.C
+s[3] <= and_gate:ANDINST4.C
+s[4] <= and_gate:ANDINST5.C
+s[5] <= and_gate:ANDINST6.C
+s[6] <= and_gate:ANDINST7.C
+s[7] <= and_gate:ANDINST8.C
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST6|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7
+a[0] => and_gate:ANDINST1.A
+a[1] => and_gate:ANDINST2.A
+a[2] => and_gate:ANDINST3.A
+a[3] => and_gate:ANDINST4.A
+a[4] => and_gate:ANDINST5.A
+a[5] => and_gate:ANDINST6.A
+a[6] => and_gate:ANDINST7.A
+a[7] => and_gate:ANDINST8.A
+b => and_gate:ANDINST1.B
+b => and_gate:ANDINST2.B
+b => and_gate:ANDINST3.B
+b => and_gate:ANDINST4.B
+b => and_gate:ANDINST5.B
+b => and_gate:ANDINST6.B
+b => and_gate:ANDINST7.B
+b => and_gate:ANDINST8.B
+s[0] <= and_gate:ANDINST1.C
+s[1] <= and_gate:ANDINST2.C
+s[2] <= and_gate:ANDINST3.C
+s[3] <= and_gate:ANDINST4.C
+s[4] <= and_gate:ANDINST5.C
+s[5] <= and_gate:ANDINST6.C
+s[6] <= and_gate:ANDINST7.C
+s[7] <= and_gate:ANDINST8.C
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitAnd:EAINST7|and_gate:ANDINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1
+a[0] => or_gate:ORINST1.A
+a[1] => or_gate:ORINST2.A
+a[2] => or_gate:ORINST3.A
+a[3] => or_gate:ORINST4.A
+a[4] => or_gate:ORINST5.A
+a[5] => or_gate:ORINST6.A
+a[6] => or_gate:ORINST7.A
+a[7] => or_gate:ORINST8.A
+b[0] => or_gate:ORINST1.B
+b[1] => or_gate:ORINST2.B
+b[2] => or_gate:ORINST3.B
+b[3] => or_gate:ORINST4.B
+b[4] => or_gate:ORINST5.B
+b[5] => or_gate:ORINST6.B
+b[6] => or_gate:ORINST7.B
+b[7] => or_gate:ORINST8.B
+s[0] <= or_gate:ORINST1.C
+s[1] <= or_gate:ORINST2.C
+s[2] <= or_gate:ORINST3.C
+s[3] <= or_gate:ORINST4.C
+s[4] <= or_gate:ORINST5.C
+s[5] <= or_gate:ORINST6.C
+s[6] <= or_gate:ORINST7.C
+s[7] <= or_gate:ORINST8.C
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST1|or_gate:ORINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2
+a[0] => or_gate:ORINST1.A
+a[1] => or_gate:ORINST2.A
+a[2] => or_gate:ORINST3.A
+a[3] => or_gate:ORINST4.A
+a[4] => or_gate:ORINST5.A
+a[5] => or_gate:ORINST6.A
+a[6] => or_gate:ORINST7.A
+a[7] => or_gate:ORINST8.A
+b[0] => or_gate:ORINST1.B
+b[1] => or_gate:ORINST2.B
+b[2] => or_gate:ORINST3.B
+b[3] => or_gate:ORINST4.B
+b[4] => or_gate:ORINST5.B
+b[5] => or_gate:ORINST6.B
+b[6] => or_gate:ORINST7.B
+b[7] => or_gate:ORINST8.B
+s[0] <= or_gate:ORINST1.C
+s[1] <= or_gate:ORINST2.C
+s[2] <= or_gate:ORINST3.C
+s[3] <= or_gate:ORINST4.C
+s[4] <= or_gate:ORINST5.C
+s[5] <= or_gate:ORINST6.C
+s[6] <= or_gate:ORINST7.C
+s[7] <= or_gate:ORINST8.C
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST2|or_gate:ORINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3
+a[0] => or_gate:ORINST1.A
+a[1] => or_gate:ORINST2.A
+a[2] => or_gate:ORINST3.A
+a[3] => or_gate:ORINST4.A
+a[4] => or_gate:ORINST5.A
+a[5] => or_gate:ORINST6.A
+a[6] => or_gate:ORINST7.A
+a[7] => or_gate:ORINST8.A
+b[0] => or_gate:ORINST1.B
+b[1] => or_gate:ORINST2.B
+b[2] => or_gate:ORINST3.B
+b[3] => or_gate:ORINST4.B
+b[4] => or_gate:ORINST5.B
+b[5] => or_gate:ORINST6.B
+b[6] => or_gate:ORINST7.B
+b[7] => or_gate:ORINST8.B
+s[0] <= or_gate:ORINST1.C
+s[1] <= or_gate:ORINST2.C
+s[2] <= or_gate:ORINST3.C
+s[3] <= or_gate:ORINST4.C
+s[4] <= or_gate:ORINST5.C
+s[5] <= or_gate:ORINST6.C
+s[6] <= or_gate:ORINST7.C
+s[7] <= or_gate:ORINST8.C
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST3|or_gate:ORINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4
+a[0] => or_gate:ORINST1.A
+a[1] => or_gate:ORINST2.A
+a[2] => or_gate:ORINST3.A
+a[3] => or_gate:ORINST4.A
+a[4] => or_gate:ORINST5.A
+a[5] => or_gate:ORINST6.A
+a[6] => or_gate:ORINST7.A
+a[7] => or_gate:ORINST8.A
+b[0] => or_gate:ORINST1.B
+b[1] => or_gate:ORINST2.B
+b[2] => or_gate:ORINST3.B
+b[3] => or_gate:ORINST4.B
+b[4] => or_gate:ORINST5.B
+b[5] => or_gate:ORINST6.B
+b[6] => or_gate:ORINST7.B
+b[7] => or_gate:ORINST8.B
+s[0] <= or_gate:ORINST1.C
+s[1] <= or_gate:ORINST2.C
+s[2] <= or_gate:ORINST3.C
+s[3] <= or_gate:ORINST4.C
+s[4] <= or_gate:ORINST5.C
+s[5] <= or_gate:ORINST6.C
+s[6] <= or_gate:ORINST7.C
+s[7] <= or_gate:ORINST8.C
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST4|or_gate:ORINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5
+a[0] => or_gate:ORINST1.A
+a[1] => or_gate:ORINST2.A
+a[2] => or_gate:ORINST3.A
+a[3] => or_gate:ORINST4.A
+a[4] => or_gate:ORINST5.A
+a[5] => or_gate:ORINST6.A
+a[6] => or_gate:ORINST7.A
+a[7] => or_gate:ORINST8.A
+b[0] => or_gate:ORINST1.B
+b[1] => or_gate:ORINST2.B
+b[2] => or_gate:ORINST3.B
+b[3] => or_gate:ORINST4.B
+b[4] => or_gate:ORINST5.B
+b[5] => or_gate:ORINST6.B
+b[6] => or_gate:ORINST7.B
+b[7] => or_gate:ORINST8.B
+s[0] <= or_gate:ORINST1.C
+s[1] <= or_gate:ORINST2.C
+s[2] <= or_gate:ORINST3.C
+s[3] <= or_gate:ORINST4.C
+s[4] <= or_gate:ORINST5.C
+s[5] <= or_gate:ORINST6.C
+s[6] <= or_gate:ORINST7.C
+s[7] <= or_gate:ORINST8.C
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST5|or_gate:ORINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6
+a[0] => or_gate:ORINST1.A
+a[1] => or_gate:ORINST2.A
+a[2] => or_gate:ORINST3.A
+a[3] => or_gate:ORINST4.A
+a[4] => or_gate:ORINST5.A
+a[5] => or_gate:ORINST6.A
+a[6] => or_gate:ORINST7.A
+a[7] => or_gate:ORINST8.A
+b[0] => or_gate:ORINST1.B
+b[1] => or_gate:ORINST2.B
+b[2] => or_gate:ORINST3.B
+b[3] => or_gate:ORINST4.B
+b[4] => or_gate:ORINST5.B
+b[5] => or_gate:ORINST6.B
+b[6] => or_gate:ORINST7.B
+b[7] => or_gate:ORINST8.B
+s[0] <= or_gate:ORINST1.C
+s[1] <= or_gate:ORINST2.C
+s[2] <= or_gate:ORINST3.C
+s[3] <= or_gate:ORINST4.C
+s[4] <= or_gate:ORINST5.C
+s[5] <= or_gate:ORINST6.C
+s[6] <= or_gate:ORINST7.C
+s[7] <= or_gate:ORINST8.C
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST1
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST2
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST3
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST4
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST5
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST6
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST7
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FourbitALU|EightBitOr:ORINST6|or_gate:ORINST8
+A => C.IN0
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+

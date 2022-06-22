@@ -1,0 +1,510 @@
+Analysis & Synthesis report for FourbitALU
+Tue Feb  8 19:38:59 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "FourBitComparator:CINST|and_gate:ANDINST5"
+ 10. Port Connectivity Checks: "FourBitComparator:CINST|and_gate:ANDINST4"
+ 11. Port Connectivity Checks: "FourBitComparator:CINST|and_gate:ANDINST3"
+ 12. Port Connectivity Checks: "FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3"
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Feb  8 19:38:59 2022       ;
+; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name               ; FourbitALU                                  ;
+; Top-level Entity Name       ; FourbitALU                                  ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 77                                          ;
+; Total pins                  ; 19                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; FourbitALU         ; FourbitALU         ;
+; Family name                                                      ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+---------+
+; FourbitALU.vhd                   ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd        ;         ;
+; Adder_Substracter.vhd            ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd ;         ;
+; FourBitNand.vhd                  ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNand.vhd       ;         ;
+; FourBitNor.vhd                   ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNor.vhd        ;         ;
+; FourBitXor.vhd                   ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXor.vhd        ;         ;
+; FourBitXnor.vhd                  ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXnor.vhd       ;         ;
+; FourBitComparator.vhd            ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd ;         ;
+; FourInputAnd.vhd                 ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputAnd.vhd      ;         ;
+; FiveInputAnd.vhd                 ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FiveInputAnd.vhd      ;         ;
+; ThreeInputAnd.vhd                ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/ThreeInputAnd.vhd     ;         ;
+; FourInputOr.vhd                  ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputOr.vhd       ;         ;
+; FourInputNot.vhd                 ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputNot.vhd      ;         ;
+; FourBitMultiplier.vhd            ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitMultiplier.vhd ;         ;
+; EightBitOr.vhd                   ; yes             ; User VHDL File        ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/EightBitOr.vhd        ;         ;
+; not_gate.vhd                     ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/not_gate.vhd          ;         ;
+; and_gate.vhd                     ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/and_gate.vhd          ;         ;
+; FourToOnexor.vhd                 ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd      ;         ;
+; xor_gate.vhd                     ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd          ;         ;
+; or_gate.vhd                      ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd           ;         ;
+; half_adder.vhd                   ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/half_adder.vhd        ;         ;
+; OnebitFullAdd.vhd                ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/OnebitFullAdd.vhd     ;         ;
+; xnor_gate.vhd                    ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xnor_gate.vhd         ;         ;
+; nand_gate.vhd                    ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/nand_gate.vhd         ;         ;
+; nor_gate.vhd                     ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/nor_gate.vhd          ;         ;
+; EightBitAnd.vhd                  ; yes             ; Auto-Found VHDL File  ; /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/EightBitAnd.vhd       ;         ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 77     ;
+;     -- Combinational with no register       ; 77     ;
+;     -- Register only                        ; 0      ;
+;     -- Combinational with a register        ; 0      ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 54     ;
+;     -- 3 input functions                    ; 10     ;
+;     -- 2 input functions                    ; 13     ;
+;     -- 1 input functions                    ; 0      ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 77     ;
+;     -- arithmetic mode                      ; 0      ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 0      ;
+;     -- asynchronous clear/load mode         ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+; I/O pins                                    ; 19     ;
+; Maximum fan-out node                        ; sel[0] ;
+; Maximum fan-out                             ; 19     ;
+; Total fan-out                               ; 280    ;
+; Average fan-out                             ; 2.92   ;
++---------------------------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                    ;
++----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node       ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                         ; Entity Name       ; Library Name ;
++----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |FourbitALU                      ; 77 (0)      ; 0            ; 0          ; 19   ; 0            ; 77 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU                                                                                                 ; FourbitALU        ; work         ;
+;    |Adder_Substracter:ASINST|    ; 12 (7)      ; 0            ; 0          ; 0    ; 0            ; 12 (7)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST                                                                        ; Adder_Substracter ; work         ;
+;       |and_gate:ANDINST21|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|and_gate:ANDINST21                                                     ; and_gate          ; work         ;
+;       |xor_gate:XORINST11|       ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11                                                     ; xor_gate          ; work         ;
+;          |or_gate:ORINST1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST11|or_gate:ORINST1                                     ; or_gate           ; work         ;
+;       |xor_gate:XORINST22|       ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22                                                     ; xor_gate          ; work         ;
+;          |or_gate:ORINST1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST22|or_gate:ORINST1                                     ; or_gate           ; work         ;
+;       |xor_gate:XORINST32|       ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32                                                     ; xor_gate          ; work         ;
+;          |or_gate:ORINST1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST32|or_gate:ORINST1                                     ; or_gate           ; work         ;
+;       |xor_gate:XORINST42|       ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42                                                     ; xor_gate          ; work         ;
+;          |or_gate:ORINST1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|Adder_Substracter:ASINST|xor_gate:XORINST42|or_gate:ORINST1                                     ; or_gate           ; work         ;
+;    |EightBitAnd:EAINST1|         ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST1                                                                             ; EightBitAnd       ; work         ;
+;       |and_gate:ANDINST2|        ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST1|and_gate:ANDINST2                                                           ; and_gate          ; work         ;
+;    |EightBitAnd:EAINST2|         ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST2                                                                             ; EightBitAnd       ; work         ;
+;       |and_gate:ANDINST5|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST5                                                           ; and_gate          ; work         ;
+;       |and_gate:ANDINST6|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST6                                                           ; and_gate          ; work         ;
+;       |and_gate:ANDINST7|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST7                                                           ; and_gate          ; work         ;
+;       |and_gate:ANDINST8|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST2|and_gate:ANDINST8                                                           ; and_gate          ; work         ;
+;    |EightBitAnd:EAINST3|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST3                                                                             ; EightBitAnd       ; work         ;
+;       |and_gate:ANDINST2|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitAnd:EAINST3|and_gate:ANDINST2                                                           ; and_gate          ; work         ;
+;    |EightBitOr:ORINST1|          ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitOr:ORINST1                                                                              ; EightBitOr        ; work         ;
+;       |or_gate:ORINST5|          ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitOr:ORINST1|or_gate:ORINST5                                                              ; or_gate           ; work         ;
+;    |EightBitOr:ORINST6|          ; 22 (0)      ; 0            ; 0          ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitOr:ORINST6                                                                              ; EightBitOr        ; work         ;
+;       |or_gate:ORINST1|          ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitOr:ORINST6|or_gate:ORINST1                                                              ; or_gate           ; work         ;
+;       |or_gate:ORINST2|          ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitOr:ORINST6|or_gate:ORINST2                                                              ; or_gate           ; work         ;
+;       |or_gate:ORINST3|          ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitOr:ORINST6|or_gate:ORINST3                                                              ; or_gate           ; work         ;
+;       |or_gate:ORINST4|          ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|EightBitOr:ORINST6|or_gate:ORINST4                                                              ; or_gate           ; work         ;
+;    |FourBitComparator:CINST|     ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitComparator:CINST                                                                         ; FourBitComparator ; work         ;
+;       |xnor_gate:XNORINST2|      ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2                                                     ; xnor_gate         ; work         ;
+;          |or_gate:ORINST1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST2|or_gate:ORINST1                                     ; or_gate           ; work         ;
+;       |xnor_gate:XNORINST3|      ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3                                                     ; xnor_gate         ; work         ;
+;          |or_gate:ORINST1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST3|or_gate:ORINST1                                     ; or_gate           ; work         ;
+;       |xnor_gate:XNORINST4|      ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4                                                     ; xnor_gate         ; work         ;
+;          |or_gate:ORINST1|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitComparator:CINST|xnor_gate:XNORINST4|or_gate:ORINST1                                     ; or_gate           ; work         ;
+;    |FourBitMultiplier:MINST|     ; 28 (0)      ; 0            ; 0          ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST                                                                         ; FourBitMultiplier ; work         ;
+;       |OnebitFullAdd:FA1|        ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;       |OnebitFullAdd:FA2|        ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST1|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;          |half_adder:HADDINST2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA2|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;       |OnebitFullAdd:FA3|        ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA3|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;       |OnebitFullAdd:FA4|        ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST1|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;          |half_adder:HADDINST2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA4|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;       |OnebitFullAdd:FA5|        ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST1|  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1                                  ; half_adder        ; work         ;
+;             |and_gate:ANDINST|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|and_gate:ANDINST                 ; and_gate          ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;          |half_adder:HADDINST2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA5|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;       |OnebitFullAdd:FA6|        ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST1|  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1                                  ; half_adder        ; work         ;
+;             |and_gate:ANDINST|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|and_gate:ANDINST                 ; and_gate          ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;          |half_adder:HADDINST2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2                                  ; half_adder        ; work         ;
+;             |and_gate:ANDINST|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA6|half_adder:HADDINST2|and_gate:ANDINST                 ; and_gate          ; work         ;
+;       |OnebitFullAdd:FA7|        ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST1|  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1                                  ; half_adder        ; work         ;
+;             |and_gate:ANDINST|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|and_gate:ANDINST                 ; and_gate          ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA7|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;       |OnebitFullAdd:FA8|        ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8                                                       ; OnebitFullAdd     ; work         ;
+;          |half_adder:HADDINST1|  ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1                                  ; half_adder        ; work         ;
+;             |and_gate:ANDINST|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|and_gate:ANDINST                 ; and_gate          ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST1|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;          |half_adder:HADDINST2|  ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2                                  ; half_adder        ; work         ;
+;             |xor_gate:XORINST|   ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST                 ; xor_gate          ; work         ;
+;                |or_gate:ORINST1| ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|OnebitFullAdd:FA8|half_adder:HADDINST2|xor_gate:XORINST|or_gate:ORINST1 ; or_gate           ; work         ;
+;       |and_gate:ANDINST10|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST10                                                      ; and_gate          ; work         ;
+;       |and_gate:ANDINST13|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST13                                                      ; and_gate          ; work         ;
+;       |and_gate:ANDINST16|       ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST16                                                      ; and_gate          ; work         ;
+;       |and_gate:ANDINST4|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST4                                                       ; and_gate          ; work         ;
+;       |and_gate:ANDINST6|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST6                                                       ; and_gate          ; work         ;
+;       |and_gate:ANDINST8|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST8                                                       ; and_gate          ; work         ;
+;       |and_gate:ANDINST9|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|and_gate:ANDINST9                                                       ; and_gate          ; work         ;
+;       |half_adder:HA1|           ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA1                                                          ; half_adder        ; work         ;
+;          |and_gate:ANDINST|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|and_gate:ANDINST                                         ; and_gate          ; work         ;
+;          |xor_gate:XORINST|      ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST                                         ; xor_gate          ; work         ;
+;             |or_gate:ORINST1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA1|xor_gate:XORINST|or_gate:ORINST1                         ; or_gate           ; work         ;
+;       |half_adder:HA2|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA2                                                          ; half_adder        ; work         ;
+;          |xor_gate:XORINST|      ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST                                         ; xor_gate          ; work         ;
+;             |or_gate:ORINST1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA2|xor_gate:XORINST|or_gate:ORINST1                         ; or_gate           ; work         ;
+;       |half_adder:HA3|           ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA3                                                          ; half_adder        ; work         ;
+;          |and_gate:ANDINST|      ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitMultiplier:MINST|half_adder:HA3|and_gate:ANDINST                                         ; and_gate          ; work         ;
+;    |FourBitNand:NAINST|          ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitNand:NAINST                                                                              ; FourBitNand       ; work         ;
+;       |nand_gate:NANDINST3|      ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST3                                                          ; nand_gate         ; work         ;
+;          |and_gate:ANDINST1|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|FourBitNand:NAINST|nand_gate:NANDINST3|and_gate:ANDINST1                                        ; and_gate          ; work         ;
+;    |ThreeInputAnd:THREEANDINST1| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|ThreeInputAnd:THREEANDINST1                                                                     ; ThreeInputAnd     ; work         ;
+;       |and_gate:ANDINST2|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|ThreeInputAnd:THREEANDINST1|and_gate:ANDINST2                                                   ; and_gate          ; work         ;
+;    |ThreeInputAnd:THREEANDINST2| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|ThreeInputAnd:THREEANDINST2                                                                     ; ThreeInputAnd     ; work         ;
+;       |and_gate:ANDINST2|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|ThreeInputAnd:THREEANDINST2|and_gate:ANDINST2                                                   ; and_gate          ; work         ;
+;    |ThreeInputAnd:THREEANDINST3| ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|ThreeInputAnd:THREEANDINST3                                                                     ; ThreeInputAnd     ; work         ;
+;       |and_gate:ANDINST2|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |FourbitALU|ThreeInputAnd:THREEANDINST3|and_gate:ANDINST2                                                   ; and_gate          ; work         ;
++----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "FourBitComparator:CINST|and_gate:ANDINST5" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; a    ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "FourBitComparator:CINST|and_gate:ANDINST4" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; a    ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "FourBitComparator:CINST|and_gate:ANDINST3" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; a    ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FourBitMultiplier:MINST|OnebitFullAdd:FA1|half_adder:HADDINST3"                      ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Feb  8 19:38:51 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FourbitALU -c FourbitALU
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file FourbitALU.vhd
+    Info (12022): Found design unit 1: FourBitALU-fourbitalu_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 10
+    Info (12023): Found entity 1: FourbitALU File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file Adder_Substracter.vhd
+    Info (12022): Found design unit 1: Adder_Substracter-add_sub_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd Line: 12
+    Info (12023): Found entity 1: Adder_Substracter File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourBitNand.vhd
+    Info (12022): Found design unit 1: FourBitNand-fourbitnand_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNand.vhd Line: 9
+    Info (12023): Found entity 1: FourBitNand File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNand.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourBitNor.vhd
+    Info (12022): Found design unit 1: FourBitNor-fourbitnor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNor.vhd Line: 9
+    Info (12023): Found entity 1: FourBitNor File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourBitXor.vhd
+    Info (12022): Found design unit 1: FourBitXor-fourbitxor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXor.vhd Line: 9
+    Info (12023): Found entity 1: FourBitXor File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourBitXnor.vhd
+    Info (12022): Found design unit 1: FourBitXnor-fourbitxnor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXnor.vhd Line: 9
+    Info (12023): Found entity 1: FourBitXnor File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXnor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourBitComparator.vhd
+    Info (12022): Found design unit 1: FourBitComparator-comparator_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 11
+    Info (12023): Found entity 1: FourBitComparator File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourInputAnd.vhd
+    Info (12022): Found design unit 1: FourInputAnd-fourinputand_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputAnd.vhd Line: 9
+    Info (12023): Found entity 1: FourInputAnd File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputAnd.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FiveInputAnd.vhd
+    Info (12022): Found design unit 1: FiveInputAnd-fiveinputand_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FiveInputAnd.vhd Line: 9
+    Info (12023): Found entity 1: FiveInputAnd File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FiveInputAnd.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ThreeInputAnd.vhd
+    Info (12022): Found design unit 1: ThreeInputAnd-threeinputand_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/ThreeInputAnd.vhd Line: 9
+    Info (12023): Found entity 1: ThreeInputAnd File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/ThreeInputAnd.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourInputOr.vhd
+    Info (12022): Found design unit 1: FourInputOr-fourinputor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputOr.vhd Line: 9
+    Info (12023): Found entity 1: FourInputOr File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputOr.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourInputNot.vhd
+    Info (12022): Found design unit 1: FourInputNot-fourinputnot_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputNot.vhd Line: 8
+    Info (12023): Found entity 1: FourInputNot File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourInputNot.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file FourBitMultiplier.vhd
+    Info (12022): Found design unit 1: FourBitMultiplier-fourbitmultiplier_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitMultiplier.vhd Line: 9
+    Info (12023): Found entity 1: FourBitMultiplier File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitMultiplier.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file EightBitOr.vhd
+    Info (12022): Found design unit 1: EightBitOr-eightbit_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/EightBitOr.vhd Line: 9
+    Info (12023): Found entity 1: EightBitOr File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/EightBitOr.vhd Line: 4
+Info (12127): Elaborating entity "FourbitALU" for the top level hierarchy
+Warning (12125): Using design file not_gate.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: not_gate-notLogic File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/not_gate.vhd Line: 15
+    Info (12023): Found entity 1: not_gate File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/not_gate.vhd Line: 6
+Info (12128): Elaborating entity "not_gate" for hierarchy "not_gate:NOTINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 98
+Warning (12125): Using design file and_gate.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: and_gate-andLogic File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/and_gate.vhd Line: 16
+    Info (12023): Found entity 1: and_gate File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/and_gate.vhd Line: 6
+Info (12128): Elaborating entity "and_gate" for hierarchy "and_gate:ANDINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 107
+Info (12128): Elaborating entity "ThreeInputAnd" for hierarchy "ThreeInputAnd:THREEANDINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 111
+Info (12128): Elaborating entity "Adder_Substracter" for hierarchy "Adder_Substracter:ASINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 129
+Warning (10873): Using initial value X (don't care) for net "output[7..5]" at Adder_Substracter.vhd(8) File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd Line: 8
+Warning (12125): Using design file FourToOnexor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: FourToOnexor-fourtoonexor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd Line: 12
+    Info (12023): Found entity 1: FourToOnexor File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd Line: 4
+Info (12128): Elaborating entity "FourToOnexor" for hierarchy "Adder_Substracter:ASINST|FourToOnexor:XORINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/Adder_Substracter.vhd Line: 47
+Warning (12125): Using design file xor_gate.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: xor_gate-xor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd Line: 9
+    Info (12023): Found entity 1: xor_gate File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd Line: 4
+Info (12128): Elaborating entity "xor_gate" for hierarchy "Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourToOnexor.vhd Line: 21
+Warning (12125): Using design file or_gate.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: or_gate-orLogic File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd Line: 16
+    Info (12023): Found entity 1: or_gate File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/or_gate.vhd Line: 6
+Info (12128): Elaborating entity "or_gate" for hierarchy "Adder_Substracter:ASINST|FourToOnexor:XORINST|xor_gate:XORINST1|or_gate:ORINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xor_gate.vhd Line: 42
+Info (12128): Elaborating entity "FourBitMultiplier" for hierarchy "FourBitMultiplier:MINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 132
+Warning (12125): Using design file half_adder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: half_adder-half_adder_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/half_adder.vhd Line: 9
+    Info (12023): Found entity 1: half_adder File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/half_adder.vhd Line: 4
+Info (12128): Elaborating entity "half_adder" for hierarchy "FourBitMultiplier:MINST|half_adder:HA1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitMultiplier.vhd Line: 122
+Warning (12125): Using design file OnebitFullAdd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: OnebitFullAdd-onebitfulladd_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/OnebitFullAdd.vhd Line: 9
+    Info (12023): Found entity 1: OnebitFullAdd File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/OnebitFullAdd.vhd Line: 4
+Info (12128): Elaborating entity "OnebitFullAdd" for hierarchy "FourBitMultiplier:MINST|OnebitFullAdd:FA1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitMultiplier.vhd Line: 125
+Warning (10036): Verilog HDL or VHDL warning at OnebitFullAdd.vhd(14): object "C3" assigned a value but never read File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/OnebitFullAdd.vhd Line: 14
+Info (12128): Elaborating entity "FourBitComparator" for hierarchy "FourBitComparator:CINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 135
+Warning (10873): Using initial value X (don't care) for net "output[7..3]" at FourBitComparator.vhd(8) File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 8
+Warning (12125): Using design file xnor_gate.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: xnor_gate-xnor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xnor_gate.vhd Line: 9
+    Info (12023): Found entity 1: xnor_gate File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/xnor_gate.vhd Line: 4
+Info (12128): Elaborating entity "xnor_gate" for hierarchy "FourBitComparator:CINST|xnor_gate:XNORINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 59
+Info (12128): Elaborating entity "FourInputAnd" for hierarchy "FourBitComparator:CINST|FourInputAnd:FOURANDINST0" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 71
+Info (12128): Elaborating entity "FourInputNot" for hierarchy "FourBitComparator:CINST|FourInputNot:FOURNOTINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 74
+Info (12128): Elaborating entity "FiveInputAnd" for hierarchy "FourBitComparator:CINST|FiveInputAnd:FIVEANDINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 90
+Info (12128): Elaborating entity "FourInputOr" for hierarchy "FourBitComparator:CINST|FourInputOr:FOURORINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitComparator.vhd Line: 93
+Info (12128): Elaborating entity "FourBitNand" for hierarchy "FourBitNand:NAINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 138
+Warning (10873): Using initial value X (don't care) for net "output[7..4]" at FourBitNand.vhd(5) File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNand.vhd Line: 5
+Warning (12125): Using design file nand_gate.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: nand_gate-nand_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/nand_gate.vhd Line: 9
+    Info (12023): Found entity 1: nand_gate File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/nand_gate.vhd Line: 4
+Info (12128): Elaborating entity "nand_gate" for hierarchy "FourBitNand:NAINST|nand_gate:NANDINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNand.vhd Line: 19
+Info (12128): Elaborating entity "FourBitNor" for hierarchy "FourBitNor:NOINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 141
+Warning (10873): Using initial value X (don't care) for net "output[7..4]" at FourBitNor.vhd(5) File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNor.vhd Line: 5
+Warning (12125): Using design file nor_gate.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: nor_gate-nor_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/nor_gate.vhd Line: 10
+    Info (12023): Found entity 1: nor_gate File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/nor_gate.vhd Line: 4
+Info (12128): Elaborating entity "nor_gate" for hierarchy "FourBitNor:NOINST|nor_gate:NORINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitNor.vhd Line: 18
+Info (12128): Elaborating entity "FourBitXor" for hierarchy "FourBitXor:XOINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 144
+Warning (10873): Using initial value X (don't care) for net "output[7..4]" at FourBitXor.vhd(5) File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXor.vhd Line: 5
+Info (12128): Elaborating entity "FourBitXnor" for hierarchy "FourBitXnor:AXNINST" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 147
+Warning (10873): Using initial value X (don't care) for net "output[7..4]" at FourBitXnor.vhd(5) File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourBitXnor.vhd Line: 5
+Warning (12125): Using design file EightBitAnd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: EightBitAnd-eightbit_arc File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/EightBitAnd.vhd Line: 9
+    Info (12023): Found entity 1: EightBitAnd File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/EightBitAnd.vhd Line: 4
+Info (12128): Elaborating entity "EightBitAnd" for hierarchy "EightBitAnd:EAINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 150
+Info (12128): Elaborating entity "EightBitOr" for hierarchy "EightBitOr:ORINST1" File: /home/chetan/Desktop/Semester4/CS232DLDCALab/lab4/q1/FourbitALU.vhd Line: 171
+Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 77 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 413 megabytes
+    Info: Processing ended: Tue Feb  8 19:38:59 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
+
+
